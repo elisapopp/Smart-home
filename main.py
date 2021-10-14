@@ -2,7 +2,6 @@ from FernseherBuilder import *
 from LampenBuilder import *
 from RolladenBuilder import *
 from Director import *
-#Kommentar
 
 def main():
 
