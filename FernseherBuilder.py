@@ -1,10 +1,6 @@
 from Builder import *
-from Fernseher import *
-from SmartHomeObject import *
 
 class FernseherBuilder(Builder):
-
-  self = Fernseher()
   
   def getStromverbrauch(self):
     self.stromverbrauchinkwh = 100
