@@ -1,24 +1,25 @@
 class SmartHomeObject:
-   def __init__(self):
-      self.__stromverbrauch = None
-      self.__sensorTyp = None
-      self.__steuergeraet = None
-      self.__produktID = None
 
-   def setStromverbrauch(self, stromverbrauch):
-      self.__stromverbrauch = stromverbrauch
+    def __init__(self):
+      self._stromverbrauch = None
+      self._sensorTyp = None
+      self._steuergeraet = None
+      self._produktID = None
 
-   def setSensorTyp(self, sensorTyp):
-      self.__sensorTyp = sensorTyp
+    def setStromverbrauch(self, stromverbrauch):
+      self._stromverbrauch = stromverbrauch
 
-   def setSteuergeraet(self, steuergeraet):
-      self.__steuergeraet = steuergeraet
+    def setSensorTyp(self, sensorTyp):
+      self._sensorTyp = sensorTyp
 
-   def setProduktID(self, produktID):
-      self.__produktID = produktID
+    def setSteuergeraet(self, steuergeraet):
+      self._steuergeraet = steuergeraet
 
-   def specification(self):
-      print("Stromverbrauch: %d" % self.__stromverbrauch + "w/h")
-      print("Sensor-Typ: " + self.__sensorTyp)
-      print("Steuergerät: " + self.__steuergeraet)
-      print("Produkt-ID: %d" % self.__produktID)
+    def setProduktID(self, produktID):
+      self._produktID = produktID
+
+    def specification(self):
+      print("Stromverbrauch: %d" % self._stromverbrauch + "w/h")
+      print("Sensor-Typ: " + self._sensorTyp)
+      print("Steuergerät: " + self._steuergeraet)
+      print("Produkt-ID: %d" % self._produktID)

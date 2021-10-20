@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "Heizung_Kompositum/main.py": [
+      {
+        "id": "0622f951-b661-4220-9611-981cec94eabf",
+        "line": 24,
+        "version": 1,
+        "index": 504
+      }
+    ]
+  }
 }
