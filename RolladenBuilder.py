@@ -15,5 +15,5 @@ class RolladenBuilder(Builder):
       return self.steuergeraetname
 
    def getProduktID(self):
-      self.produktIDnummer = 100002
-      return self.produktIDnummer
+     self.produktIDnummer = 100002
+     return self.produktIDnummer

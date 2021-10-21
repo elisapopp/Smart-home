@@ -5,6 +5,7 @@ from Director import *
 from Rolladen import *
 from Fernseher import *
 from Lampen import *
+from Kompositum import *
 
 def main():
 
@@ -26,6 +27,17 @@ def main():
    print("")
    print("---------------------------------------------------------------")
 
+   print("Lampe 2 wird erzeugt...")
+   director.setBuilder(lampenBuilder)
+   lampe = director.getSmartHomeObject()
+   lampe.specification()
+   print("")
+   neueLampe2 = Lampen(lampe)
+   neueLampe2.einschalten()
+   neueLampe2.ausschalten()
+   print("")
+   print("---------------------------------------------------------------")
+
    rolladenBuilder = RolladenBuilder()
   
    print("Rolladen wird erzeugt...")
@@ -37,7 +49,6 @@ def main():
    neuerRolladen.hochfahren()
    neuerRolladen.runterfahren()
    print("")
-   print("---------------------------------------------------------------")
 
    fernseherBuilder = FernseherBuilder()
   
@@ -51,8 +62,41 @@ def main():
    neuerFernseher.umschalten()
    neuerFernseher.ausschalten()
    print("")
+
+   #Wurzel erstellen
+   kompositumSHObject = Kompositum()
+   #Blätter einfügen
+   kompositumSHObject.addSmartHomeObject(neueLampe)
+   kompositumSHObject.addSmartHomeObject(neuerRolladen)
+   kompositumSHObject.addSmartHomeObject(neuerFernseher)
+
+  #Unter-Komposita erstellen
+   KompositumRolladen = Kompositum()
+   KompositumRolladen.addSmartHomeObject(neuerRolladen)
+   KompositumFernseher = Kompositum()
+   KompositumFernseher.addSmartHomeObject(neuerFernseher)
+   KompositumLampe = Kompositum()
+   KompositumLampe.addSmartHomeObject(neueLampe)
+   KompositumLampe.addSmartHomeObject(neueLampe2)
+
+   # Unter-Komposita in Wurzel einfügen
+   kompositumSHObject.addSmartHomeObject(KompositumRolladen)
+   kompositumSHObject.addSmartHomeObject(KompositumFernseher)
+   kompositumSHObject.addSmartHomeObject(KompositumLampe)
+
+   KompositumFernseher.stromverbrauchZuruecksetzen()
+   KompositumLampe.stromverbrauchZuruecksetzen()
+   KompositumRolladen.stromverbrauchZuruecksetzen()
+   kompositumSHObject.stromverbrauchZuruecksetzen()
+
+   import doctest
+   #doctest.IGNORE_EXCEPTION_DETAIL
+   doctest.testmod()
+   print("just test doctest")
+
    print("------------------------END----------------------------")
 
 
 if __name__ == "__main__":
    main()
+   

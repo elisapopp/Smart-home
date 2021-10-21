@@ -1,5 +1,5 @@
 from SmartHomeObject import *
-
+#Blatt
 class Rolladen(SmartHomeObject): 
 
   def __init__(self, SmartHomeObject):

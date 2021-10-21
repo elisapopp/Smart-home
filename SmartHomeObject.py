@@ -1,5 +1,5 @@
 class SmartHomeObject:
-
+#Komponente
     def __init__(self):
       self._stromverbrauch = None
       self._sensorTyp = None
@@ -17,6 +17,9 @@ class SmartHomeObject:
 
     def setProduktID(self, produktID):
       self._produktID = produktID
+
+    def getStromverbrauch(self):
+      return self._stromverbrauch
 
     def specification(self):
       print("Stromverbrauch: %d" % self._stromverbrauch + "w/h")

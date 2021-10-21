@@ -5,7 +5,7 @@ class Fernseher(SmartHomeObject):
   def __init__(self, SmartHomeObject):
     SmartHomeObject.__init__()
 
-  def einschalten(self):
+  def einschalten(self):  
     print("TV schaltet sich ein")
 
   def ausschalten(self):

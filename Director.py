@@ -1,12 +1,14 @@
 from SmartHomeObject import *
 
 class Director:
+
    __builder = None
    
    def setBuilder(self, builder):
       self.__builder = builder
    
    def getSmartHomeObject(self):
+
       smartHomeObject = SmartHomeObject()
       
       stromverbrauch = self.__builder.getStromverbrauch()
