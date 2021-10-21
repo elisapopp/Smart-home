@@ -21,6 +21,11 @@ class SmartHomeObject:
     def getStromverbrauch(self):
       return self._stromverbrauch
 
+    def stromverbrauchZuruecksetzen(self):
+      self.setStromverbrauch(0)
+      print("Stromverbrauch wurde zurückgesetzt auf: " + str(self.getStromverbrauch()) + " w/h")
+      
+
     def specification(self):
       print("Stromverbrauch: %d" % self._stromverbrauch + "w/h")
       print("Sensor-Typ: " + self._sensorTyp)

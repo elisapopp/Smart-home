@@ -1,6 +1,21 @@
 from SmartHomeObject import *
 
-class Fernseher(SmartHomeObject): 
+class Fernseher(SmartHomeObject):
+
+  """
+  Test einschalten()
+  >>> Fernseher("TestFernseher").einschalten()
+  TV schaltet sich ein
+
+  Test ausschalten()
+  >>> Fernseher("TestFernseher").ausschalten()
+  TV schaltet sich aus
+
+  Test umschalten()
+  >>> Fernseher("TestFernseher").umschalten()
+  TV schaltet um auf ein wichtiges Fussballspiel
+
+  """
 
   def __init__(self, SmartHomeObject):
     SmartHomeObject.__init__()

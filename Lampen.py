@@ -2,13 +2,16 @@ from SmartHomeObject import *
 
 class Lampen(SmartHomeObject):
   """Test instanciation of Lampe.
+  
+    >>> type(Lampen("Lampen"))
+    <class 'Lampen.Lampen'>
 
     Test einschalten() of Lampen.
-    >>> Lampe().einschalten()
+    >>> Lampen("L").einschalten()
     Lampe schaltet sich ein
 
     Test ausschalten() of Lampen.
-    >>> Lampe().ausschalten()
+    >>> Lampen("L").ausschalten()
     Lampe schaltet sich aus
   """
 

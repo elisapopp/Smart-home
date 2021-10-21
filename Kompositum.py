@@ -1,6 +1,6 @@
 from SmartHomeObject import *
 #Kompositum
-class Kompositum():
+class Kompositum(SmartHomeObject):
 
   def __init__(self): 
         self.__shobject = []
@@ -16,6 +16,5 @@ class Kompositum():
       if isinstance(obj, Kompositum):
         obj.stromverbrauchZuruecksetzen()
       else:
-        obj.setStromverbrauch(0)
-        print("Stromverbrauch wurde zurückgesetzt auf: " + str(obj.getStromverbrauch()) + " w/h")
+        super().stromverbrauchZuruecksetzen()
 
