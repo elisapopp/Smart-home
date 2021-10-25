@@ -6,6 +6,8 @@ from Rolladen import *
 from Fernseher import *
 from Lampen import *
 from Kompositum import *
+from FernseherKnopf import *
+from SteuerApp import *
 
 def main():
 
@@ -58,9 +60,6 @@ def main():
    fernseher.specification()
    print("")
    neuerFernseher = Fernseher(fernseher)
-   neuerFernseher.einschalten()
-   neuerFernseher.umschalten()
-   neuerFernseher.ausschalten()
    print("")
 
    #Wurzel erstellen
@@ -93,6 +92,15 @@ def main():
    #doctest.IGNORE_EXCEPTION_DETAIL
    doctest.testmod()
    print("just test doctest")
+
+   # Kommando Entwurfsmuster
+
+   fernseherKnopf = FernseherKnopf(neuerFernseher)
+
+   steuerApp = SteuerApp()
+   steuerApp.aktionAusfuehren(fernseherKnopf)
+   steuerApp.aktionAusfuehren(fernseherKnopf)
+   
 
    print("------------------------END----------------------------")
 

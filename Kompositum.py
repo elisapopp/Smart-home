@@ -3,7 +3,7 @@ from SmartHomeObject import *
 class Kompositum(SmartHomeObject):
 
   def __init__(self): 
-        self.__shobject = []
+    self.__shobject = []
   
   def addSmartHomeObject(self, smartHomeObject):
     self.__shobject.append(smartHomeObject)
